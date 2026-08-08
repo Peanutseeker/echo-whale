@@ -1,12 +1,15 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1] ?? 'echo-whale'
+
 export default defineConfig({
-  base: process.env.GITHUB_ACTIONS ? '/echo-whale/' : '/',
+  base: process.env.GITHUB_ACTIONS ? `/${repositoryName}/` : '/',
   plugins: [react()],
   test: {
     environment: 'jsdom',
     globals: true,
+    include: ['src/**/*.{test,spec}.{ts,tsx}'],
     passWithNoTests: true,
     setupFiles: ['./src/test/setup.ts'],
   },
