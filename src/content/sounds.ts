@@ -1,0 +1,7 @@
+import type { Sound } from './types'
+
+export const sounds: Sound[] = [
+  { id: 'luna-lullaby', whaleId: 'luna', title: "Luna's humpback lullaby", description: 'Listen for rising moans and gentle pulses. Humpbacks use long sounds to communicate far through water.', audioUrl: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/5/52/Humpback_whale_song.ogg/Humpback_whale_song.ogg.mp3', transcript: 'A low call rises, pauses, then falls away in a soft, repeating phrase.', credit: 'Demo audio link: Wikimedia Commons. Verify licensing before final publication.' },
+  { id: 'kai-clicks', whaleId: 'kai', title: "Kai's orca clicks", description: 'Short clicks can help toothed whales understand what is around them underwater.', audioUrl: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f5/Orca_calls.ogg/Orca_calls.ogg.mp3', transcript: 'Quick, bright clicks arrive in short groups, with quiet gaps between them.', credit: 'Demo audio link: Wikimedia Commons. Verify licensing before final publication.' },
+  { id: 'sol-breath', whaleId: 'sol', title: "Sol's ocean breath", description: 'A whale breathes at the surface, then returns below the waves for a dive.', audioUrl: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/5/52/Humpback_whale_song.ogg/Humpback_whale_song.ogg.mp3', transcript: 'A calm underwater call is paired with a reminder to look for the whale’s blow at the surface.', credit: 'Demo audio link: Wikimedia Commons. Verify licensing before final publication.' },
+]
