@@ -35,8 +35,9 @@ This repository is configured for free GitHub Pages hosting through GitHub Actio
 
 1. Fork this repository or create a new repository from the code.
 2. Push the project to that repository’s `main` branch.
-3. Open the repository’s **Actions** tab and allow the “Deploy EchoWhale to GitHub Pages” workflow to finish.
-4. The site will be available at `https://<github-username>.github.io/<repository-name>/`.
+3. On a first deployment, open **Settings → Pages** and select **GitHub Actions** as the build source if GitHub has not enabled Pages automatically for the repository.
+4. Open the repository’s **Actions** tab and allow the “Deploy EchoWhale to GitHub Pages” workflow to finish.
+5. The site will be available at `https://<github-username>.github.io/<repository-name>/`.
 
 The workflow builds the static site automatically on every push to `main`. The Vite configuration derives the correct repository path during that build, so a fork does not need a manual base-path change.
 
