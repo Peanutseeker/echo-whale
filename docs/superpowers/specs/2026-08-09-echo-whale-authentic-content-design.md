@@ -1,100 +1,100 @@
-# EchoWhale Authentic Content & Editorial Design Specification
+# EchoWhale：真实内容与编辑式视觉设计规范
 
-## Objective
+## 目标
 
-Refine the public EchoWhale portfolio site so it presents the original Harvard Summer School CSCI E-34 UX Engineering project with authentic marine imagery, more specific and source-aware content, and a deliberately editorial visual system. The site remains a course-scope whale-watch companion—not a live tracking, booking, or social product.
+升级公开的 EchoWhale 作品集网站，使它以真实的海洋生物影像、更具体且有来源依据的内容，以及有意图的编辑式视觉系统呈现原本的哈佛暑期学校 CSCI E-34 UX Engineering 期末项目。网站仍然是一个面向观鲸乘客的课程范围内的辅助工具，而不是实时追踪、订票或社交产品。
 
-## Confirmed decisions
+## 已确认的决策
 
-- The README speaks in first person: “my Harvard Summer School … term project,” not “Haowen Xu’s.”
-- Visual direction: **Editorial field guide**—large real wildlife photography, short story-led reading, and clean factual detail.
-- All production imagery must be locally stored, provenance-recorded, and either public-domain or used under an explicit compatible license. Google image search may help discover candidates but is never a license or a download source.
-- The Boston reference area is the New England Aquarium × Boston Harbor City Cruises route to Stellwagen Bank National Marine Sanctuary.
-- Real-time sightings are allowed only with a stable, public, legally usable official data feed. No such feed was found on the official Aquarium / City Cruises public pages during this review. The initial implementation therefore uses the non-real-time fallback below.
+- README 使用第一人称：“my Harvard Summer School … term project”，不再写作 “Haowen Xu’s”。
+- 视觉方向采用 **编辑式海洋图鉴（Editorial field guide）**：大幅真实野生动物摄影、短而有故事感的阅读内容、清晰的事实信息层。
+- 所有生产环境图片均须保存在本地、记录出处，并属于公共领域或具有明确且兼容的授权。Google 图片搜索只能用于发现候选图片，不能作为授权依据或直接下载来源。
+- Boston 地区的参照范围是 New England Aquarium × Boston Harbor City Cruises 前往 Stellwagen Bank National Marine Sanctuary 的观鲸路线。
+- 只有在存在稳定、公开、可合法使用的官方数据源时，才允许实时同步目击信息。本次审核的 Aquarium / City Cruises 公开页面中未发现这样的数据源，因此第一版采用下述非实时降级方案。
 
-## Scope preservation
+## 范围保持
 
-The five original functions remain: sounds, whale profiles, marine-life encyclopedia, local-sightings context, and conservation education. No accounts, tickets, booking, uploads, GPS tracking, crowd reports, social sharing, AI assistant, or new game mechanics are introduced.
+保留原项目的五项功能：声音、鲸鱼档案、海洋生物百科、本地观鲸信息与保育教育。不加入账号、购票、预订、上传、GPS 追踪、群众上报、社交分享、AI 助手或新的游戏机制。
 
-The old fictional names (Luna, Kai, Sol) will become **teaching-profile labels for real species**, not claims about live, named animals. This keeps the term-project’s individual-profile interaction and route structure while avoiding false identification claims.
+原先虚构的 Luna、Kai、Sol 将变为**真实物种的教学档案标签**，而不是对现实中已被追踪、命名个体的宣称。这样既保留期末项目的个人鲸鱼档案交互与路由结构，也避免产生不真实的识别信息。
 
-## Content and image model
+## 内容与图片模型
 
-### Images
+### 图片
 
-Each primary profile receives a distinct, real photo:
+每个主要鲸鱼档案都要使用不同的真实照片：
 
-| Profile | Real subject | Required asset treatment |
+| 档案 | 真实主体 | 图片处理要求 |
 | --- | --- | --- |
-| Humpback guide | Humpback whale, preferably fluke or surface behavior | Hero / sound card crop and profile crop from the same credited original where useful. |
-| Orca guide | Killer whale | Distinct dorsal-fin / eye-patch photo; no relabelled humpback image. |
-| Gray whale guide | Gray whale | Distinct mottled body / head / surface image. |
-| Sea turtle, octopus, clownfish | Corresponding real animal | Separate photo per animal, crop-safe at card and detail sizes. |
+| Humpback guide | 座头鲸；优先使用尾鳍或水面行为照片 | 可在首页 / 声音卡片与详情页使用同一张已署名原图的不同裁切。 |
+| Orca guide | 虎鲸 | 使用清楚展示背鳍或眼斑的不同照片；不得将座头鲸照片重新标注为虎鲸。 |
+| Gray whale guide | 灰鲸 | 使用能展示斑驳皮肤、头部或水面姿态的不同照片。 |
+| Sea turtle、octopus、clownfish | 对应的真实海洋生物 | 每种动物独立使用照片，并能适应卡片和详情页两种裁切比例。 |
 
-Every image entry stores `alt`, creator/agency, license, source-page URL, original-file URL, and a local filename. A `CREDITS.md` page in the repository records the complete attribution. Photos are used at native or modestly resized resolution; no generative detail insertion or “super-resolution” is permitted. Cropping, compression, and responsive variants are acceptable.
+每项图片数据都保存 `alt`、摄影师 / 机构、授权、来源页面 URL、原始文件 URL 与本地文件名。仓库中的 `CREDITS.md` 记录完整署名。照片只允许以原生尺寸或适度缩放使用；不允许生成式补细节或“超分辨率”处理。允许裁切、压缩和生成响应式尺寸版本。
 
-### Specific content
+### 更具体的内容
 
-- Species pages use only short, checkable claims and link to an authoritative source page.
-- The sounds page explains what a listener may hear, identifies the recording source, and visually connects each recording to the correct species.
-- Boston context names Boston’s Central Wharf departure route, Stellwagen Bank National Marine Sanctuary, seasonality, and likely species as time-bounded field-guide information rather than live claims.
-- Conservation cards name a concrete, species-relevant action and cite an authoritative conservation source.
+- 物种页面只采用简短、可核验的描述，并链接至权威来源页面。
+- 声音页面说明听众可能听到的声音特征，标注录音来源，并用视觉将每段录音连接到正确的鲸类。
+- Boston 信息要说明 Central Wharf 出发路线、Stellwagen Bank National Marine Sanctuary、观鲸季节与常见物种；它们是有时间边界的观鲸图鉴信息，而不是实时宣称。
+- 保育卡片给出一个具体、与物种相关的行动，并链接至权威的保育来源。
 
-## Data-source strategy
+## 数据来源策略
 
-### Source assessment
+### 来源评估
 
-New England Aquarium states that naturalists log species, behaviors, and weather on every outing; it does not publish a stable public sightings feed on the reviewed public pages. City Cruises exposes booking and schedule information, but not a documented sightings API. Therefore the site must not scrape HTML, invent recency, or label anything “live.”
+New England Aquarium 说明自然学家会在每趟航程记录物种、行为和天气；但经审核的公开页面未发布稳定的目击数据订阅源。City Cruises 提供预订和班次信息，但没有文档化的 sightings API。因此网站不得抓取其 HTML、虚构时间新鲜度，或将内容标为“实时”。
 
-### Initial fallback: Boston field guide
+### 初始降级方案：Boston 观鲸图鉴
 
-Replace the fabricated `Recent Spots` fixture with a clearly framed **Boston field guide**:
+使用清晰表述的 **Boston 观鲸图鉴** 替代虚构的 `Recent Spots` 数据：
 
-- geographic context: Boston → Stellwagen Bank;
-- operational season and departure context from the Aquarium / City Cruises;
-- likely animals and observation cues from official Aquarium guidance;
-- a visible source link and `Last editorial review` date;
-- no fake coordinates, no current timestamps, no “recently spotted” phrasing, and no dynamic map pins.
+- 地理背景：Boston → Stellwagen Bank；
+- 来自 Aquarium / City Cruises 的运营季节与出发信息；
+- 来自 Aquarium 官方说明的常见动物与观察提示；
+- 可见的来源链接和 `Last editorial review` 日期；
+- 不显示虚构坐标、不显示当前时间戳、不使用“最近发现”等措辞，也不显示动态地图点位。
 
-The existing map interaction is removed if it can no longer be backed by real data; the page’s required local-sightings intent is instead fulfilled through a transparent, source-linked local whale-watch context.
+若地图不再有真实数据支撑，则删除现有地图交互；原作业中“本地观鲸信息”的意图改为通过透明、有来源的本地观鲸背景来完成。
 
-### Future sync gate
+### 未来同步的启用条件
 
-Implement a scheduled GitHub Actions sync only if all four are true:
+只有同时满足以下四项时，才实施 GitHub Actions 定时同步：
 
-1. The operator or Aquarium publishes a stable machine-readable endpoint or an explicitly permitted report feed.
-2. Terms permit automated retrieval and public display.
-3. The feed includes timestamp, geographic context, species/individual information, and a clear source URL.
-4. Data freshness and failure states can be exposed honestly in the UI.
+1. 运营方或 Aquarium 发布稳定的机器可读端点，或明确允许使用的报告订阅源；
+2. 使用条款允许自动获取和公开展示；
+3. 数据包含时间、地理背景、物种 / 个体信息以及清晰来源链接；
+4. 网站可以如实展示数据新鲜度与获取失败状态。
 
-If a source later qualifies, a serverless-free scheduled workflow may fetch it into a versioned static JSON snapshot. Until then, no synchronization code is shipped.
+若未来来源符合条件，可采用无服务器的定时工作流抓取数据，并生成带版本的静态 JSON 快照。在那之前，不提交任何同步代码。
 
-## Editorial interface system
+## 编辑式界面系统
 
-### Typography
+### 字体
 
-- Use one expressive, open-licensed serif display face for short headings (e.g., DM Serif Display) and one highly legible, open-licensed sans serif for UI and body copy (e.g., Manrope).
-- Self-host only the font files and weights actually used. Maintain system-font fallbacks and avoid loading third-party font scripts at runtime.
-- Use a clear scale: small metadata, 16–18px body text, 28–40px section headers, and an oversized but restrained home title. Body lines should stay narrow enough for easy reading.
+- 标题使用一种有表现力、开源授权的衬线展示字体（例如 DM Serif Display）；界面与正文使用一种高度易读的无衬线字体（例如 Manrope）。
+- 只本地托管实际使用到的字体文件与字重，保留系统字体回退；不在运行时加载第三方字体脚本。
+- 建立清晰层级：小型元数据、16–18px 正文、28–40px 分段标题，以及醒目但克制的首页主标题。正文行宽需便于快速阅读。
 
-### Layout and color
+### 布局与颜色
 
-- A real photo occupies the majority of the first view on the home and profile pages; copy rests on a distinct, high-contrast panel rather than over busy imagery.
-- Content cards are flatter and less toy-like: consistent radius, light rules, generous vertical rhythm, and fewer decorative bubbles.
-- Deep ink blue, seafoam, and warm sand remain; coral becomes a sparse signal color for actions and notices.
-- On desktop, use an editorial two-column composition for profile details. On mobile, retain a single vertical reading path and the current text-labelled navigation.
+- 首页和档案详情页的首屏以真实照片为主；文本放在独立、高对比度面板中，而非压在复杂图片上。
+- 内容卡片更扁平、降低玩具感：统一圆角、轻量分隔线、更充足的垂直间距，以及更少的装饰气泡。
+- 延续深墨蓝、海沫绿、暖沙色；珊瑚色只作为操作与提示的少量强调色。
+- 桌面端采用编辑式双栏档案布局；手机端保持单列的纵向阅读路径与现有的文字标签导航。
 
-### Accessibility and resilience
+### 可访问性与韧性
 
-- All photos have descriptive alt text; decorative photos use empty alt text only when surrounding text conveys the same information.
-- Text, controls, source links, keyboard focus, and audio transcripts remain native HTML.
-- Image failures show a plain fallback background and preserve textual page content.
-- The data-source label is visually distinct and never relies on color alone.
+- 所有照片均有描述性替代文字；只有当周围文字已表达相同信息时，装饰性照片才使用空替代文字。
+- 正文、控件、来源链接、键盘焦点与声音文字稿都保持为原生 HTML。
+- 图片加载失败时，展示朴素背景，但不能遮挡或删除文本内容。
+- 数据来源标签在视觉上应清楚可辨，且不能只依赖颜色来表达。
 
-## Validation
+## 验证标准
 
-1. Verify each downloaded asset’s source page, license statement, creator/agency, and direct file URL before it enters `public/images`.
-2. Check that no two primary whale profiles share the same image file.
-3. Compare desktop and 390px mobile pages for reading order, image crop, focus visibility, navigation, and contrast.
-4. Run unit tests, end-to-end user-story test, production build, and GitHub Pages deployment check.
-5. Confirm the deployed site never uses “live,” “recent,” or an implied current timestamp for non-synchronized Boston information.
+1. 在每一张图片进入 `public/images` 前，核对其来源页面、授权说明、摄影师 / 机构与直接文件 URL。
+2. 确保三个主要鲸类档案不共用同一个图片文件。
+3. 对比桌面端与 390px 手机端的阅读顺序、图片裁切、焦点可见性、导航与对比度。
+4. 运行单元测试、端到端用户故事测试、生产构建与 GitHub Pages 部署检查。
+5. 确认上线网站不会针对未同步的 Boston 信息使用“实时”“最近”等暗示当前性的表达，也不会暗示存在实时时间戳。
