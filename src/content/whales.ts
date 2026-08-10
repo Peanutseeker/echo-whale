@@ -1,30 +1,36 @@
 import type { Whale } from './types'
-import { projectAsset } from './assets'
+import { media } from './media'
 
 export const whales: Whale[] = [
   {
     id: 'luna',
-    name: 'Luna',
+    guideLabel: 'Humpback guide',
     species: 'Humpback whale',
-    markings: ['A white crescent on the right tail fluke', 'A small dark notch near the fin'],
-    story: 'Luna is a curious humpback who travels through our demo ocean with a calf each summer. Her tail pattern helps watchers tell her apart.',
-    image: projectAsset('/images/profile-whale.png'),
+    scientificName: 'Megaptera novaeangliae',
+    identificationCues: ['Long, pale-edged pectoral fins', 'A small dorsal fin set on a rounded hump', 'A broad tail fluke that may lift clear of the water'],
+    introduction: 'Use this teaching profile to notice the long flippers and broad flukes that make humpbacks especially recognisable from a whale-watch boat.',
+    image: media.humpback,
+    source: { label: 'NOAA Fisheries: Humpback whale', url: 'https://www.fisheries.noaa.gov/species/humpback-whale' },
   },
   {
     id: 'kai',
-    name: 'Kai',
+    guideLabel: 'Orca guide',
     species: 'Orca',
-    markings: ['A tall dorsal fin', 'A pale saddle patch behind the fin'],
-    story: 'Kai is the thoughtful explorer in this demo pod. Watch for the bright saddle patch when he surfaces beside the boat.',
-    image: projectAsset('/images/profile-whale.png'),
+    scientificName: 'Orcinus orca',
+    identificationCues: ['A bold white patch near the eye', 'A tall dorsal fin', 'A gray saddle patch behind the fin'],
+    introduction: 'Use this teaching profile to connect an orca’s black-and-white pattern with the body parts a naturalist may point out from a boat.',
+    image: media.orca,
+    source: { label: 'NOAA Fisheries: Killer whale', url: 'https://www.fisheries.noaa.gov/species/killer-whale' },
   },
   {
     id: 'sol',
-    name: 'Sol',
+    guideLabel: 'Gray whale guide',
     species: 'Gray whale',
-    markings: ['Mottled gray skin', 'A heart-shaped blow in cool air'],
-    story: 'Sol follows the coast on a long migration. Her gentle, mottled appearance makes her a useful whale to learn first.',
-    image: projectAsset('/images/profile-whale.png'),
+    scientificName: 'Eschrichtius robustus',
+    identificationCues: ['Mottled gray skin often marked with barnacles and whale lice', 'No dorsal fin; a low ridge runs toward the tail', 'A heart-shaped blow may be visible in cool air'],
+    introduction: 'Use this teaching profile to spot the gray whale’s mottled surface pattern and low back profile without treating it as a named, tracked individual.',
+    image: media.grayWhale,
+    source: { label: 'NOAA Fisheries: Gray whale', url: 'https://www.fisheries.noaa.gov/species/gray-whale' },
   },
 ]
 

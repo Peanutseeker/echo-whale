@@ -11,5 +11,5 @@ it('offers a recovery path when an animal search has no matches', async () => {
 
   expect(screen.getByRole('heading', { name: 'No sea animal found' })).toBeVisible()
   await user.click(screen.getByRole('button', { name: 'Show all sea animals' }))
-  expect(screen.getByRole('heading', { name: 'Sea turtle' })).toBeVisible()
+  expect(screen.getByRole('heading', { name: 'Green sea turtle' })).toBeVisible()
 })
