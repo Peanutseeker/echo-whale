@@ -5,7 +5,7 @@ const navItems = [
   ['Ocean sounds', '/sounds'],
   ['Meet a whale', '/whales'],
   ['Sea animals', '/animals'],
-  ['Recent spots', '/spots'],
+  ['Boston field guide', '/spots'],
   ['Help whales', '/conservation'],
 ] as const
 

@@ -2,10 +2,15 @@ import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { SpotsPage } from './SpotsPage'
 
-it('labels local sightings as demo data and keeps the list ahead of the map', () => {
+it('shows Boston whale-watch context without presenting it as live sightings', () => {
   render(<MemoryRouter><SpotsPage /></MemoryRouter>)
 
-  expect(screen.getByRole('note')).toHaveTextContent('Demo data — not live sightings or trip tracking.')
-  expect(screen.getByRole('list', { name: 'Recent demo sightings' })).toBeVisible()
-  expect(screen.getByRole('button', { name: 'Show map' })).toHaveAttribute('aria-expanded', 'false')
+  expect(screen.getByRole('heading', { name: 'Boston whale-watch field guide' })).toBeVisible()
+  expect(screen.getAllByText(/Central Wharf/)).toHaveLength(2)
+  expect(screen.getByText(/travel toward Stellwagen Bank National Marine Sanctuary/)).toBeVisible()
+  expect(screen.getByText('May through November')).toBeVisible()
+  expect(screen.getByRole('link', { name: /Source: New England Aquarium 2026 whale watch announcement/i })).toBeVisible()
+  expect(screen.getByRole('link', { name: /Source: NOAA Stellwagen Bank National Marine Sanctuary/i })).toBeVisible()
+  expect(screen.queryByRole('button', { name: /map/i })).not.toBeInTheDocument()
+  expect(screen.queryByText(/recent|latest|today|yesterday|demo|live/i)).not.toBeInTheDocument()
 })

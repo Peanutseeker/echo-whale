@@ -1,1 +1,20 @@
-:root { --ink: #063e66; --deep: #042b49; --ocean: #0d6d9f; --sky: #aee7f7; --foam: #effbff; --coral: #fd866e; --sun: #f5c753; --mint: #a9e1cb; --violet: #c3b2ed; --paper: #f8fbfa; --radius: 1.5rem; --shadow: 0 20px 50px rgba(4, 43, 73, .14); }
+:root {
+  --ink: #102c3d;
+  --deep: #082536;
+  --ocean: #16708b;
+  --ocean-dark: #0b5069;
+  --seafoam: #dcefeb;
+  --mist: #eef6f3;
+  --paper: #f8f7f2;
+  --sand: #e7dfcd;
+  --coral: #c95c45;
+  --coral-soft: #f4ddd5;
+  --sun: #d6a94d;
+  --line: rgba(16, 44, 61, .16);
+  --muted: #5b6d75;
+  --sans: 'Manrope', 'Avenir Next', Avenir, system-ui, sans-serif;
+  --display: 'DM Serif Display', Georgia, serif;
+  --radius-sm: .75rem;
+  --radius: 1.125rem;
+  --shadow: 0 20px 50px rgba(8, 37, 54, .12);
+}

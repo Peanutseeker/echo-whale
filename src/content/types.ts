@@ -1,21 +1,27 @@
-export type Whale = {
-  id: string
-  name: string
-  species: string
-  markings: string[]
-  story: string
-  image: string
+export type SourceReference = {
+  label: string
+  url: string
+  reviewedAt?: string
 }
 
-export type Sighting = {
+export type MediaAsset = {
+  localPath: string
+  alt: string
+  creator: string
+  license: string
+  sourcePageUrl: string
+  originalFileUrl: string
+}
+
+export type Whale = {
   id: string
-  whaleId: string
-  place: string
-  observedAt: string
-  latitude: number
-  longitude: number
-  status: string
-  demo: true
+  guideLabel: string
+  species: string
+  scientificName: string
+  identificationCues: string[]
+  introduction: string
+  image: MediaAsset
+  source: SourceReference
 }
 
 export type Sound = {
@@ -26,14 +32,17 @@ export type Sound = {
   audioUrl: string
   transcript: string
   credit: string
+  source: SourceReference
 }
 
 export type Species = {
   id: string
   name: string
+  scientificName: string
   plainDescription: string
   facts: Array<{ label: string; value: string }>
-  image: string
+  image: MediaAsset
+  source: SourceReference
 }
 
 export type ConservationSpotlight = {
@@ -42,4 +51,5 @@ export type ConservationSpotlight = {
   issue: string
   action: string
   reason: string
+  source: SourceReference
 }

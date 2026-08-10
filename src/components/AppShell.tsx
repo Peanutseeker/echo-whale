@@ -16,8 +16,8 @@ export function AppShell({ children }: { children: ReactNode }) {
         </Link>
         {!isHome && <span className="topbar-context">Ocean explorer</span>}
       </header>
-      <main id="page-content" className="page-content">{children}</main>
       <BottomNav />
+      <main id="page-content" className="page-content">{children}</main>
     </div>
   )
 }
